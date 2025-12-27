@@ -1,1 +1,1 @@
-Website: [wwmc.online](https://wwmc.online/)
+Website: https://wwmc.online/
