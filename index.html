@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+<title>WWMC</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=K2D&family=Roboto+Slab&display=swap" rel="stylesheet">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <title>WWMC</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel = "stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Include Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Include FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    <!-- Logo aligned left -->
+    <h1 class="logo me-auto" style="margin-right: auto;"><a href="index.html">WWMC</a></h1>
+
+<center>    
+  <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero" onclick="setActiveLink(event, 'hero')">Home</a></li>
+        <li><a class="nav-link scrollto" href="#about" onclick="setActiveLink(event, 'about')">About</a></li>
+        <li><a class="nav-link scrollto" href="#team" onclick="setActiveLink(event, 'team')">Team</a></li>
+        <li><a class="nav-link scrollto" href="#pricing" onclick="setActiveLink(event, 'pricing')">Schedule</a></li>
+        <li><a class="nav-link scrollto" href="#faq" onclick="setActiveLink(event, 'faq')">FAQ</a></li>
+        <li><a class="nav-link active" style="color: #47b2e4;">|</a></li> <!-- Always active -->
+        <li><a class="nav-link scrollto" href="#contact" onclick="setActiveLink(event, 'contact')">Contact</a></li>
+        <li class="dropdown">
+          <a href="#services" onclick="setActiveLink(event, 'services')">
+            <span>Register</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            <li><a href="https://docs.google.com/forms/d/1LyxwnD9UICnLrCt-ZcE10Z7hXw2Csc8bWsQ4bNa0f2w/edit?usp=sharing" target="_blank">Registration Form</a></li>
+            <li><a href="https://docs.google.com/document/d/18v1estDmmg4-WVZwEdkMLobVBH5ToTxwKBCWmE2lA-Y/edit?usp=sharing" target="_blank">Competition Fees</a></li>
+            <li><a href="https://docs.google.com/document/d/1IW9LTDweaV9pG69JYpInjBK6Ma2D45kgjyXEQg_BMzk/edit?usp=sharing" target="_blank">Team List</a></li>
+            <li><a href="#" onclick="openSeatingPopup(event)">Seating Chart</a></li>
+          </ul>
+        </li>
+      </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-close d-xl-none bi bi-x" onclick="toggleMobileNav()"></i>
+    </nav>
+</center>
+
+    <script>
+      function setActiveLink(event, sectionId) {
+        event.preventDefault();
+        
+        // Remove 'active' class from all links
+        var links = document.querySelectorAll('.nav-link');
+        links.forEach(function(link) {
+          link.classList.remove('active');
+        });
+    
+        // Add 'active' class to the clicked link
+        event.currentTarget.classList.add('active');
+    
+        // Scroll to the section
+        scrollToSection(event, sectionId);
+      }
+    
+      function scrollToSection(event, sectionId) {
+        // Implement your scroll logic here, e.g., smooth scrolling
+        var element = document.getElementById(sectionId);
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
+
+<script>
+  function scrollToSection(event, id) {
+    event.preventDefault();
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function toggleMobileNav() {
+    document.body.classList.toggle('mobile-nav-active');
+  }
+</script>
+
+  </div>
+</header>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+
+<style>
+  #popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1001;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    transition: 0.3s;
+  }
+
+  .close-btn:hover {
+    transform: scale(1.2);
+    color: #47b2e4;
+  }
+
+  .dont-show-container {
+    margin-top: 15px;
+  }
+
+  #dontShowAgainBtn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  #dontShowAgainBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+
+  /* Classes for fade animation */
+  .fade-in {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* Seating popup styles */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+  }
+
+  .popup-content {
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .popup-img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .close {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1001;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1.5));
+    transition: color 0.3s ease;
+  }
+
+  .close:hover {
+    color: #818181;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const popupDismissed = localStorage.getItem("popupDismissed");
+    
+    if (!popupDismissed) {
+      setTimeout(showPopup, 500);
+    }
+
+    // Event listener for the "Don't show again" button
+    const dontShowAgainBtn = document.getElementById("dontShowAgainBtn");
+    if (dontShowAgainBtn) {
+      dontShowAgainBtn.addEventListener("click", function() {
+        localStorage.setItem("popupDismissed", "true");
+        closePopup();
+      });
+    }
+  });
+
+  function showPopup() {
+    const popup = document.getElementById("popup-container");
+    const overlay = document.getElementById("popup-overlay");
+    
+    if (popup && overlay) {
+      popup.style.display = "block";
+      overlay.style.display = "block";
+      popup.offsetHeight;
+      overlay.offsetHeight;
+      
+      popup.classList.add("fade-in");
+      overlay.classList.add("fade-in");
+    }
+  }
+
+  function closePopup() {
+    const popup = document.getElementById("popup-container");
+    const overlay = document.getElementById("popup-overlay");
+    
+    if (popup && overlay) {
+      popup.classList.remove("fade-in");
+      overlay.classList.remove("fade-in");
+      
+      setTimeout(() => {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+      }, 300);
+    }
+  }
+
+  function openSeatingPopup(event) {
+    event.preventDefault();
+    var popup = document.getElementById("seating-popup");
+    var popupContent = document.getElementById("seating-popup-content");
+    
+    // Clear existing content
+    popupContent.innerHTML = '';
+    
+    // Add all seating chart images
+    for (let i = 1; i <= 5; i++) {
+      const img = document.createElement('img');
+      img.src = `./assets/img/WWMC Table Assignments-${i}.png`;
+      img.className = 'popup-img';
+      popupContent.appendChild(img);
+    }
+    
+    popup.style.display = "flex";
+  }
+
+  function closeSeatingPopup() {
+    var popup = document.getElementById("seating-popup");
+    popup.style.display = "none";
+  }
+
+  function openSeatingAndCloseRescheduled(event) {
+    event.preventDefault();
+    closePopup();
+    openSeatingPopup(event);
+  }
+
+  // Close popup on ESC key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeSeatingPopup();
+      closePopup();
+    }
+  });
+</script>
+
+
+
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1 class="section-title">Woodrow Wilson Math Competition</h1>
+          <h2 class="section-title">Rise up to the challenge.</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/img/wwmclogo-removebg-preview.png" class="img-fluid animated" alt="" border="5">
+        </div>
+      </div>
+
+  </section><!-- End Hero -->
+
+<!-- Popup and Overlay -->
+<div id="popup-overlay"></div>
+<div id="popup-container">
+  <button class="close-btn" onclick="closePopup()">✖</button>
+
+  <h2>WWMC 2026 Registration Now Open!</h2>
+
+  <p>
+    Good evening everyone! We're excited to announce that after a long wait,
+    <strong>registration for WWMC 2026 is officially open!</strong>
+  </p>
+
+  <p>
+    We encourage returning competitors to participate again, as well as
+    newcomers and anyone interested in mathematics. The competition will take
+    place on <strong>Sunday, January 11th, 2026</strong>.
+  </p>
+
+  <p>
+    Registration costs <strong>$10 per person</strong>, and this year we’ll be
+    offering <strong>$500+ in cash prizes</strong>.
+  </p>
+
+  <p style="color: #b00020; font-weight: 600;">
+    Note that 6th graders may NOT form teams with 7th or 8th graders.
+  </p>
+
+  <p>
+    You can register using the Google Form linked on our website and pay using
+    one of the listed payment options.
+  </p>
+
+  <p>
+    <a href="https://docs.google.com/forms/d/1LyxwnD9UICnLrCt-ZcE10Z7hXw2Csc8bWsQ4bNa0f2w/edit?usp=sharing" target="_blank">
+      Click here to register
+    </a>
+  </p>
+
+  <p style="font-size: 14px;">
+    For more information, visit our website or contact us at
+    <strong>support@wwmc.online</strong>.
+  </p>
+
+  <div class="dont-show-container">
+    <button id="dontShowAgainBtn">Don't show again</button>
+  </div>
+</div>
+
+
+  <main id="main">
+
+    <!-- ======= Clients Section ====== -->
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+    
+        <div class="row justify-content-center" data-aos="zoom-in">
+    
+          <div class="col-sm d-flex align-items-center justify-content-center">
+            <img src="assets/img/wolfram-corporate-logo-horz-sm.png" href="https://www.wolfram.com/wolfram-alpha-notebook-edition/?source=nav" class="img-fluid" alt="">
+          </div>
+    
+          <div class="col-sm d-flex align-items-center justify-content-center">
+            <img src="assets/img/AoPS_Main_Logo_1.png" href="https://artofproblemsolving.com/store/list/all-products" class="img-fluid" alt="">
+          </div>
+          
+          <div class="col-sm d-flex align-items-center justify-content-center">
+            <img src="assets/img/desmos.png" href="https://www.desmos.com/" class="img-fluid" alt="">
+          </div>
+    
+        </div>
+    
+      </div>
+    </section>
+    
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>What is WWMC?</h2>
+        </div>
+
+        <div class="row content">
+          
+            <p class="section-title">
+              WWMC is a math competition hosted by our founders and volunteers. The competition features multiple rounds, including team and individual, which consist of intense problem solving ranging from complex algebra, to basic geometry. Not only is it filled with math fun, but prizes are on the line for individual and team round winners! This competition was designed to challenge and engage students from Edison Middle Schools in mathematical problem-solving and critical thinking. It also provides a platform for students to showcase their mathematical abilities beyond the classroom and to compete with peers from different schools.
+            </p>
+            <ul>
+            </ul>
+          </div>
+        </div>
+  </section><!-- End About Us Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Registration</h2>
+          <p>If you'd like to register for WWMC, follow the guide below.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="#about">Learn about the competition:</a></h4>
+              <p>Read through our website and familiarize yourself with the competition and its style.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="https://docs.google.com/forms/d/1LyxwnD9UICnLrCt-ZcE10Z7hXw2Csc8bWsQ4bNa0f2w/edit?usp=sharing" target="_blank">Form a team:</a></h4>
+              <p>Gather a team of 3-4 people, or sign up by yourself or with one other person and have us pair you with other incomplete teams.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="https://docs.google.com/forms/d/1LyxwnD9UICnLrCt-ZcE10Z7hXw2Csc8bWsQ4bNa0f2w/edit?usp=sharing" target="_blank">Sign up through our form:</a></h4>
+              <p>One person from your group should fill out a form with everyone's correct information. You can find it in the dropdown menu of the Register tab on the top.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a target="_blank" href="https://docs.google.com/document/d/18v1estDmmg4-WVZwEdkMLobVBH5ToTxwKBCWmE2lA-Y/edit?usp=sharing">Pay for competition fees:</a></h4>
+              <p>The same person that filled out the form should pay for the team's registration fees below via Venmo or Zelle ($10 per person). You can find more about this in the dropdown menu of the Register tab on the top.</p>
+            </div>
+          </div>
+
+        </div>
+
+        
+
+      </div>
+    </section><!-- End Services Section -->
+
+   
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Our Team</h2>
+      <p>Meet the people behind WWMC!</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="member d-flex align-items-start">
+          <div class="pic ashwin">
+            <img src="assets/img/team/ashwin.wwmc.png" class="img-fluid" alt="" style="width: 400px; height: 120px;">
+          </div>
+          <div class="member-info">
+            <h4>Ashwin Kirubakaran</h4>
+            <span>Co-Founder / Director</span>
+            <p>Welcome to the WWMC Website! Being part of the WWMC Team, I helped with the technical operations, creating specific tests, and much more!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+        <div class="member d-flex align-items-start">
+          <div class="pic panaov">
+            <img src="assets/img/team/panaov.wwmc.png" class="img-fluid" alt="">
+          </div>
+          <div class="member-info">
+            <h4>Panaov Sonkar</h4>
+            <span>Co-Founder / Director</span>
+            <p>Hello there! I'm Panaov, and I've helped with creating slideshow decks, organizing the community, registration, and a lot more!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="member d-flex align-items-start">
+          <div class="pic">
+            <img src="assets/img/team/aarit.wwmc.png" class="img-fluid" alt="">
+          </div>
+          <div class="member-info">
+            <h4>Aarit Malhotra</h4>
+            <span>Co-Founder / Director</span>
+            <p>Hi! My name's Aarit and apart from helping start this competition, I've assisted in creating tests, web development, and more!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="member d-flex align-items-start">
+          <div class="pic">
+            <img src="assets/img/team/ahaan.wwmc.png" class="img-fluid" alt="">
+          </div>
+          <div class="member-info">
+            <h4>Ahaan Gupta</h4>
+            <span>Head Operations Officer</span>
+            <p>Hey! My name is Ahaan and I support test creation, competitor support, and competition management!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vaibhav's Section -->
+      <div class="col-lg-6 mt-4 mx-auto" data-aos="zoom-in" data-aos-delay="300">
+        <div class="member d-flex align-items-start">
+          <div class="pic">
+            <img src="assets/img/team/vaibhav.png" class="img-fluid" alt="">
+          </div>
+          <div class="member-info">
+            <h4>Vaibhav Sitaraman</h4>
+            <span>Head of Contest Creation</span>
+            <p>Hello! My name is Vaibhav and I wrote problems and created tests to help bring this competition to all of you!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section><!-- End Team Section -->
+
+
+    <!-- ======= Schedule Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+        <h2>Schedule</h2>
+        <div class="content-container">
+          <div class="slider">
+            <div class="slide">
+              <img src="./assets/img/schedule1.png" alt="1"/>
+            </div>
+            <div class="slide">
+              <img src="./assets/img/schedule2.png" alt="2"/>
+            </div>
+            <div class="slide">
+              <img src="./assets/img/schedule3.png" alt="3"/>
+            </div>
+            <div class="slide">
+              <img src="./assets/img/schedule4.png" alt="4"/>
+            </div>
+            <div class="dots-container">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+              <span class="dot" data-slide="3"></span>
+            </div>
+          </div>
+
+          <div class="schedule-table">
+            <table>
+              <tr style="font-weight: normal; color: #37517e;">
+                <th>Check-In</th> 
+                <th>9:00 - 9:30</th> 
+              </tr>
+              <tr>
+                <td>Opening Ceremony</td>
+                <td>9:30 - 9:45</td>
+              </tr>
+              <tr>
+                <td>Individual Round (6th & 7/8)</td>
+                <td>9:45 - 10:45</td>
+              </tr>
+              <tr>
+                <td>Break</td>
+                <td>10:45 - 11:00</td>
+              </tr>
+              <tr>
+                <td>Team Round</td>
+                <td>11:00 - 11:30</td>
+              </tr>
+              <tr>
+                <td>Lunch</td>
+                <td>11:35 - 12:45</td>
+              </tr>
+              <tr>
+                <td>Buzzer Blitz</td>
+                <td>12:45 - 2:15</td>
+              </tr>
+              <tr>
+                <td>Closing Ceremony</td>
+                <td>2:15 - 2:45</td>
+              </tr>
+            </table>  
+          </div>
+        </div>
+      </div>
+    </section>    
+<!-- End Pricing Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>FAQ</h2>
+          <p>Have a question? Look for the answer here!</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Who can participate in the competition?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  All members in a participating team must attend one of Edison's public middle schools. School ID's will be needed on the day of the competition for proof.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">When is WWMC? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  WWMC will take place on Sunday, January 11th, 2026, at Woodrow Wilson Middle School. See the section above for the schedule along with the windows for payment and registration.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">How do I register? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  See the Registration section on our website for a step-by-step guide on that! We have a limited capacity, so register quick!
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Can I register solo or with one other person? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  You'll have to be in a team of 3-4 people in order to participate in the competition. However, you can register individually or as a duo and have us pair you with others to form a 3-4 person team.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">What happens if I miss the registration window? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  No matter how late, once the registration window closes, teams will not be able to register for the competition.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="600">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-6" class="collapsed">Where can I form teams? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  You can form teams with other Edison middle schoolers, or join our Discord server in the Contact section to form teams with other competitors! If you'd like, you can also register individually or with one other person for us to match you up with others in order to form a 3-4 person team.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="700">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-7" class="collapsed">Are there prizes? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-7" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  In past competitions, participants have won over $500 in cash and prizes across both individual and team rounds. This year’s prizes will be revealed at the event.
+                </p>
+              </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-delay="800">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-8" class="collapsed">Can our team members vary in schools/grades? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-8" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Your team is allowed to have members of different schools and grades, as long as they all attend one of Edison's public middle schools.
+                </p>
+              </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-delay="900">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-9" class="collapsed">How does the pairing process work? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-9" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Registration pairing is only for those who register individually or as a duo in order to get paired with others to form a 3-4 person team so they can compete. Once a solo or duo fills out the registration form and pays for their fees accordingly, they will be matched up with others to form a proper team. An email will be sent to all members letting them know they've been matched up.
+                </p>
+              </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-delay="1000">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-10" class="collapsed">How do I know if my team is registered for WWMC? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-10" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  To find out if your team's registered, go to the dropdown menu on the Register tab and select the Team List. Scroll through the list of teams to see if your team is on there to compete in WWMC.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>If you have any further questions, feel free to contact us via email or this contact form. You can also join our Discord server to chat with other mathletes and receive up-to-date information on the competition!</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>50 Woodrow Wilson Dr, Edison NJ, 08820</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p><a href="https://mail.google.com/mail/?fs=1&to=support@wwmc.online&tf=cm" target="_blank">support@wwmc.online</a></p>
+              </div>
+
+              <div class="discord">
+                <i class="bi bi-discord"></i>
+                <h4>Discord Server:</h4>
+                <p><a href="https://discord.gg/NdhbpXYEuJ" target="_blank">https://discord.gg/NdhbpXYEuJ</a></p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.4061736255862!2d-74.37875192519209!3d40.55470684723201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3b7b8d1ce89af%3A0xd0307ecfc7cfbdd8!2s50%20Woodrow%20Wilson%20Dr%2C%20Edison%2C%20NJ%2008820!5e0!3m2!1sen!2sus!4v1723255736435!5m2!1sen!2sus" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          
+              <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form method="post" id="contact-form" action="contact.php" target="_self">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" name="msg" rows="10" id="msg" required></textarea>
+              </div>
+              <div class="text-center"><button id="sendbtn" type="submit" name="btn-send" class="js-click" onclick="changeContent()">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+ 
+    </section><!-- End Contact Section -->
+
+<style> 
+  .js-click{
+            border-color: #ffffff; 
+            background-color:#47b2e4; 
+            border-radius: 5px; 
+            border-width: 2px; 
+            border-style: solid;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.7s;
+    		color: white;
+			font-weight: bold;
+        }
+        .js-click:hover {
+            background-color: #f3f5fa;
+          	border-color: #47b2e4;
+            transform:scale(1.1);
+            -webkit-transform:scale(1.1);
+            -ms-transform: scale(1.1);
+          	color: #47b2e4;
+        }
+  		
+</style>
+
+<script>
+  	const btn = document.getElementById("sendbtn");
+  	const name = document.getElementById("name");
+	const email = document.getElementById("email");
+  	const msg = document.getElementById("msg");
+  	const subject = document.getElementById("subject");
+  
+  	<!-- put cv here if doesnt work -->
+</script>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+   
+
+    
+
+   
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Include Bootstrap JS (jQuery is required for Bootstrap JS) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+<style>
+  ::-webkit-scrollbar {
+      width: 20px;
+      cursor:pointer
+    }
+    ::-webkit-scrollbar {
+      background: #37517e;
+
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px #37517e;
+      border-radius: 0px;
+      cursor: pointer;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #ffffff4b;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
